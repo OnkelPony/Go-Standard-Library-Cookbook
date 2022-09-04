@@ -6,20 +6,25 @@ import (
 )
 
 func main() {
-
 	key := "DB_CONN"
 	// Set the environmental variable.
-	os.Setenv(key, "postgres://as:as@example.com/pg?sslmode=verify-full")
+	err := os.Setenv(key, "postgres://as:as@example.com/pg?sslmode=verify-full")
+	if err != nil {
+		panic(err)
+	}
 
 	val := GetEnvDefault(key, "postgres://as:as@localhost/pg?sslmode=verify-full")
 
-	log.Println("The value is :" + val)
+	log.Println("The value is: " + val)
 
-	os.Unsetenv(key)
+	err = os.Unsetenv(key)
+	if err != nil {
+		panic(err)
+	}
 
 	val = GetEnvDefault(key, "postgres://as:as@127.0.0.1/pg?sslmode=verify-full")
 
-	log.Println("The default value is :" + val)
+	log.Println("The default value is: " + val)
 
 }
 

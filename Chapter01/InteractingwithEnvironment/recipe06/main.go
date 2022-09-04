@@ -8,7 +8,6 @@ import (
 )
 
 func main() {
-
 	pid := os.Getpid()
 	fmt.Printf("Process PID: %d \n", pid)
 
@@ -17,7 +16,5 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-
 	fmt.Println(string(out))
-
 }

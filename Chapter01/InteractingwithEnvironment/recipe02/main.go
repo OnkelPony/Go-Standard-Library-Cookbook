@@ -6,7 +6,6 @@ import (
 )
 
 func main() {
-
 	args := os.Args
 
 	// This call will print
@@ -22,9 +21,7 @@ func main() {
 	// by omiting the first argument.
 	otherArgs := args[1:]
 	fmt.Println(otherArgs)
-
 	for idx, arg := range otherArgs {
 		fmt.Printf("Arg %d = %s \n", idx, arg)
 	}
-
 }

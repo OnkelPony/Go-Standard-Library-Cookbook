@@ -23,7 +23,6 @@ func (a *ArrayValue) Set(s string) error {
 }
 
 func main() {
-
 	// Extracting flag values with methods returning pointers
 	retry := flag.Int("retry", -1, "Defines max retry count")
 
@@ -31,7 +30,7 @@ func main() {
 	// In this case the variable must be defined
 	// prior to the flag.
 	var logPrefix string
-	flag.StringVar(&logPrefix, "prefix", "", "Logger prefix")
+	flag.StringVar(&logPrefix, "prefix", "log-", "Logger prefix")
 
 	var arr ArrayValue
 	flag.Var(&arr, "array", "Input array to iterate through.")
